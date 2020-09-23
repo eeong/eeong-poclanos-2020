@@ -1,7 +1,5 @@
 {
   "projects": {
-    "valencia": "eeong-valencia",
-    "first": "eeong-first",
-    "default": "eeong-first"
+    "default": "eeong-my"
   }
 }
