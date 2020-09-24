@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Music Shop</title>
+	<link rel="shortcut icon" href="../img/dd-image-150x150.png">
 	<link rel="stylesheet" href="../css/all.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -16,7 +16,6 @@
 	<script src="../js/imagesloaded.pkgd.min.js"></script>
 	<script src="../js/wow.min.js"></script>
 </head>
-
 <body>
 	<div class="wrapper">
 		<div class="header-wrapper">
@@ -24,11 +23,11 @@
 				<div class="logo ">
 					<h1><a href="#"><img src="../img/Logo-dark.png" alt="top-logo" width="112px" height="21px"></a></h1>
 				</div>
-				<div class="nav-wrapper x50">
+				<div class="nav-wrapper x60">
 					<div class="nav-wrap">
 						<ul class="nav">
 							<li>
-								<a href="#"><span>Home</span></a>
+								<a href="#"><span class="off">Home</span></a>
 								<ul class="sub-nav">
 									<li>Main Home</li>
 									<li>Tour Showcase</li>
@@ -124,7 +123,7 @@
 						<div class="media "><i class="fa fa-soundcloud"></i></div>
 						<div class="media "><i class="fa fa-youtube-play"></i></div>
 					</div>
-					<div class="cart-wrap"> <a href="#"> Cart(0) <div class="cart-message">No products in the cart.</div></a>
+					<div class="cart-wrap"> <a href="#"> Cart(0) </a><div class="cart-message">No products in the cart.</div>
 					</div>
 					<div class="side-nav"><a href="#">
 							<span class="square1">
@@ -149,49 +148,67 @@
 
 		<div class="home-wrapper">
 			<div class="home-wrap">
-				<div class="slide-wrapper on">
+				<div class="slide-wrapper">
 					<div class="slide-wrap">
-						<div class="title">
-							<h2>Violet Sound</h2>
+						<div class="slide-left x40">
+							<div class="title">
+								<h2>Violet Sounds</h2>
+							</div>
+							<div class="slide-desc">Lorem Ipsum rhis ts toshho svetsgin. Proin gravida nibh lor quis bibendum aucto
+							</div>
+							<button class="btn-view">View More</button>
 						</div>
-						<div class="slide-desc">Lorem Ipsum rhis ts toshho svetsgin. Proin gravida nibh lor quis bibendum aucto</div>
-						<button class="btn-view">View More</button>
-						<div class="slide-img"><img src="../img/10.png" alt="circle"></div>
-						<div class="slide-img"><img src="../img/home-4-rev-img-9.png" alt="omg"></div>
 					</div>
+					<div class="slide-img"><img src="../img/home-4-rev-img-9.png" alt="omg"> </div>
+					<div class="slide-img"><img src="../img/10.png" alt="circle"></div>
 				</div>
 				<div class="slide-wrapper">
 					<div class="slide-wrap">
-						<div class="title">
-							<h2>Modern Basic</h2>
-						</div>
-						<div class="slide-wrap-desc">Lorem Ipsum rhis ts toshho svetsgin. Proin gravida nibh lor quis bibendum aucto</div>
-						<button class="btn-view">View More</button>
-						<div class="slide-img"><img src="../img/home-4-rev-img-7-1.png" alt="lp"></div>
+						<div class="slide-left x40">
+							<div class="title">
+								<h2>Modern Basic</h2>
+							</div>
+							<div class="slide-desc">Lorem Ipsum rhis ts toshho svetsgin. Proin gravida nibh lor quis bibendum
+								aucto</div>
+							<button class="btn-view">View More</button>
+						</div>						
 					</div>
+					<div class="slide-img"><img src="../img/home-4-rev-img-7-1.png" alt="lp"></div>
 				</div>
 				<div class="slide-wrapper">
-				<div class="slide-wrap">
-					<div class="title">
-						<h2>Discover Now</h2>
-					</div>
-					<div class="slide-wrap-desc">Lorem Ipsum rhis ts toshho svetsgin. Proin gravida nibh lor quis bibendum aucto</div>
-					<button class="btn-view">View More</button>
-					<div class="slide-img"><img src="../img/home-4-rev-img-8.png" alt="headphone"></div>
-					
+					<div class="slide-wrap">
+						<div class="slide-left x40">
+							<div class="title">
+								<h2>Discover Now</h2>
+							</div>
+							<div class="slide-desc">Lorem Ipsum rhis ts toshho svetsgin. Proin gravida nibh lor quis bibendum aucto
+							</div>
+							<button class="btn-view">View More</button>
+						</div>
+							</div>
+							<div class="slide-img"><img src="../img/home-4-rev-img-8.png" alt="headphone"></div>
 				</div>
+			<div class="arrow-wrap">
+					<div class="slide-arrowL slide-arrow">
+						<svg  >
+							<circle cx="50%" cy="50%" r="45%"></circle>
+						</svg>
+						<svg >
+							<circle cx="50%" cy="50%" r="44%"></circle>
+						</svg>
+						<i class="fa fa-angle-left"></i>
+					</div>
+					<div class="slide-arrowR slide-arrow">
+						<svg >
+							<circle cx="50%" cy="50%" r="45%"></circle>
+						</svg>
+						<svg >
+							<circle cx="50%" cy="50%" r="44%"></circle>
+						</svg>
+						<i class="fa fa-angle-right"></i>
+					</div>
 			</div>
-			<div class="slide-arrowL">
-				<svg><circle cx="50%" cy="50%" r="45%"></circle></svg>
-				<svg><circle cx="50%" cy="50%" r="44%"></circle></svg>
-				<i class="fa fa-angle-left"></i>
-			</div>
-			<div class="slide-arrowR">
-				<svg><circle cx="50%" cy="50%" r="45%"></circle></svg>
-				<svg><circle cx="50%" cy="50%" r="44%"></circle></svg>
-				<i class="fa fa-angle-right"></i>
-			</div>
-		</div><!-- //.home-wrap -->
+			</div><!-- //.home-wrap -->
 		</div><!-- //.home-wrapper -->
 	</div><!-- //.wrapper -->
 
