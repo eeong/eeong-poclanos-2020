@@ -2,13 +2,13 @@
 /* font-family: 'Poppins', sans-serif; */
 
 /************ COMMON  *************/
-body{font-family: 'Poppins' , sans-serif;
+html,body{font-family: 'Poppins' , sans-serif;
 	font-size: 15px;
 	font-weight: 400;
 	color: #5d516c;
 	background-color: #fff;
 	overflow-x: hidden; 
-	height: 5000px;}
+	height: 8000px;}
 	
 .title{ color: #38214A;}
 .btn-view{color: #38214A; }
@@ -26,8 +26,8 @@ body{font-family: 'Poppins' , sans-serif;
 
 .wrapper{ position: relative;}
 /************ HEADER  *************/
-.header-wrapper{width: 100vw; height: 109px; position: absolute; top: 0; left: 0; z-index: 10;}
-.header-wrap{display: flex; justify-content: space-between; align-items: center; text-align: center; width: 95%; height: 100%; margin: 0 auto; position: relative;} 
+.header-wrapper{width: 100vw; height: 109px; position: absolute; top: 0; left: 0; z-index: 10; user-select: none;}
+.header-wrap{display: flex; justify-content: space-between; align-items: center; text-align: center; width: 95%; max-width: 1920px;  height: 100%; margin: 0 auto; position: relative;} 
 .header-wrap .nav-wrap{padding-left: 35%;}
 .header-wrap .nav-wrapper .nav{display: flex; justify-content: space-evenly; align-items: center;  }
 .header-wrap .nav > li span{color:#37214A; font-weight: 600; font-size: 1em;}
@@ -46,9 +46,9 @@ body{font-family: 'Poppins' , sans-serif;
 
 
 /************  HOME  *************/
-.home-wrapper{width: 100%; height: 778px; position: relative; overflow: hidden; font-size: 1rem;}
-.home-wrap{width:100%; height: 100%;}
-.home-wrap .slide-wrapper{position: absolute; width: 100vw; height: 100%; left: 0; top: 0; opacity: 0;  overflow: hidden; }
+.home-wrapper{width: 100%; height: 778px; position: relative; overflow: hidden; font-size: 1rem; user-select: none;}
+.home-wrap{width:100%; height: 100%; max-width: 1920px; margin: 0 auto;}
+.home-wrap .slide-wrapper{position: absolute; width: 100%; height: 100%; left: 0; top: 0; opacity: 0;  overflow: hidden; }
 .home-wrap .slide-wrapper .slide-wrap{width: 80%; height: 100%; position: relative; display: flex; justify-content: start; align-items: center; align-items: center; margin: 0 auto; }
 .home-wrap .slide-wrapper .slide-wrap .slide-left{display: flex; flex-wrap: wrap; z-index: 10; }
 .home-wrap .slide-wrapper .slide-wrap .slide-left .title{ overflow: hidden;}
@@ -95,8 +95,8 @@ body{font-family: 'Poppins' , sans-serif;
 .home-wrap .slide-arrow:hover .fa{color: #111;}
 
 /************ PROMO  *************/
-.promo-wrapper{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 2rem 1rem; margin: 0 auto; font-size: 1rem;}
-.promo-wrap{border-radius: 5px; position: relative; display: flex; justify-content: start; align-items: center; height: 100%; padding: 0 2em; height:17.6vw; overflow: hidden;}
+.promo-wrapper{width: 100%;  max-width: 1920px; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 0 1rem; margin: 0 auto; user-select: none;}
+.promo-wrap{border-radius: 5px; position: relative; display: flex; justify-content: start; align-items: center; height: 100%; min-height: 18em; padding: 0 2em; margin-top: 2em; height:17.6vw; overflow: hidden;}
 .promo-wrap:nth-child(1) {background: linear-gradient(45deg, rgb(243, 214, 199) 0%, rgba(242,192,221,1) 49%, rgba(243,216,249,1) 100%);}
 .promo-wrap:nth-child(2) {background: #F8E7E5;}
 .promo-wrap:nth-child(3) {background: #F7F6F5;}
@@ -113,9 +113,20 @@ body{font-family: 'Poppins' , sans-serif;
 .promo-wrap .promo-box .btn-view{font-size: 1em; font-weight: 600; cursor: pointer; display: inline-block;}
 .promo-wrap .promo-box .btn-view i{ font-size: 1.1em; }
 
+/************ Music Shop  *************/
+.shop-wrapper{width: 100%; font-size: 1rem; padding: 120px 15px; overflow: hidden;}
+.shop-wrapper .shop-title{text-align: center; margin: 0 auto; }
+.shop-wrapper .shop-title .title h2{font-size: 3em; color:#111; font-weight: 700; letter-spacing: -0.2;}
+.shop-wrapper .shop-title .desc{font-size: 1.2em; margin: 1em 0 4em 0; line-height: 1.4; }
+.shop-wrapper .shop-wrap{display: flex; flex-wrap: wrap; }
+.shop-wrapper .shop-wrap .shop-item img{width: 100%; border-radius: 5px;}
+.shop-wrapper .shop-wrap .item-desc{color:#38214A; font-weight: 600; margin-top: 30px;}
+.shop-wrapper .shop-wrap .item-price{margin-bottom: 90px;}
 
 
 
+/************ ScrollTop  *************/
+.top-scroll{color: #000; position: fixed; right: -32px; bottom: 65px; transform: rotate(-90deg); cursor: pointer; transition: opacity 0.5s; }
 
 
 /************ Responsive  *************/
@@ -144,17 +155,15 @@ body{font-family: 'Poppins' , sans-serif;
 		width: 380px;}
 	.home-wrap .slide-wrapper:nth-child(2) .slide-img{bottom: 0%; transform:translateY(0);}
 	.home-wrap .slide-wrapper:nth-child(3) .slide-img{bottom: 0%; transform:translateY(0);}
-	
-
+	.promo-wrapper{font-size: 0.9rem; }
 }
 
 @media screen and (max-width: 767px) {
-	.home-wrapper{height:697px; }
 	.home-wrap .arrow-wrap{display: none;}
 } 
 
 @media screen and (max-width: 696px) {
-	.home-wrapper{height:780px; }
+	.home-wrapper{min-height:780px; }
 	.slide-wrapper:nth-child(1) .slide-img:nth-child(2) img{ 
 		width: 387px;}
 	.slide-wrapper:nth-child(2) .slide-img:nth-child(2) img{ 
@@ -162,9 +171,9 @@ body{font-family: 'Poppins' , sans-serif;
 	.slide-wrapper:nth-child(3) .slide-img:nth-child(2) img{ 
 		width: 250px;}
 }
-
+			
 @media screen and (max-width: 640px) {
-	
+	.promo-wrapper{font-size: 0.7rem; }
 }
 
 @media screen and (max-width: 480px) {
