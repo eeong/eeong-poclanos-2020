@@ -132,6 +132,7 @@ html,body{font-family: 'Poppins' , sans-serif;
 /************ Svg Wrapper  *************/
 .svg-wrapper{width: 1200px; margin: 0 auto; font-size: 1rem; display: flex; color: #5D516C; flex-wrap: wrap;}
 .svg-wrapper .svg-wrap{margin-bottom: 30px; }
+.svg-wrapper .svg-wrap svg{opacity: 0;}
 .svg-wrapper .svg-wrap svg path{stroke:#5d516c; color:#5d516c; }
 .svg-wrapper .svg-wrap svg line{stroke:#5d516c; color:#5d516c; }
 .svg-wrapper .svg-wrap svg rect{stroke:#5d516c; color:#5d516c; }

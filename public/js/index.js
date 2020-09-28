@@ -14,7 +14,7 @@ var lastIdx = $(".slide-wrapper").length - 1;
 var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni;
 
 /*************** Function **************/
-init();
+
 
 function init() {
 	onClickR();
@@ -77,7 +77,9 @@ function onScroll() {
 		"opacity": 1
 	});
 
-	if (scrollTop > topCont + naviTop + promoHei) svgAni();
+	if (scrollTop > topCont + naviTop + promoHei) {
+		$(".svg-wrap svg").css("opacity",1);
+		svgAni()};
 }
 
 function onResize() {
@@ -108,6 +110,7 @@ function onResize() {
 			}}
 
 function svgAni() {
+	
 	$svgs.each(function () {
 		$path.each(function (i, path) {
 			var total_length = path.getTotalLength();
@@ -115,7 +118,7 @@ function svgAni() {
 			path.style.strokeDashoffset = total_length;
 			$(path).animate({
 				"strokeDashoffset": 0
-			}, 2000);
+			}, 1500);
 		});
 		$line.each(function (i, line) {
 			var total_lengthL = line.getTotalLength();
@@ -123,7 +126,7 @@ function svgAni() {
 			line.style.strokeDashoffset = total_lengthL;
 			$(line).animate({
 				"strokeDashoffset": 0
-			}, 1500);
+			}, 1000);
 		});
 	});
 }
@@ -162,6 +165,7 @@ function onClickTop() {
 
 
 /*************** Execute **************/
+init();
 $(".arrow-wrap .slide-arrowL").click(onClickL);
 $(".arrow-wrap .slide-arrowR").click(onClickR);
 $(".slide-arrow").mouseenter(triggerTrans);
