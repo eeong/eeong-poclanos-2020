@@ -9,17 +9,19 @@ var $backToTop = $(".top-scroll");
 var $svgs = $('.svgAni');
 var $path = $('.svgAni').find("path");
 var $line = $('.svgAni').find("line");
+var $footerSlide = $(".footer-slide-wrap");
 var idx = 2;
 var lastIdx = $(".slide-wrapper").length - 1;
-var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni;
+var mouseDown = false;
+var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni,startX,scrollLeft;
 
 /*************** Function **************/
+
 
 
 function init() {
 	onClickR();
 	onLeave();
-
 }
 
 function ani() {
@@ -58,7 +60,11 @@ function backToTop(scrollTop, topCont) {
 /*************** Callback **************/
 function onScroll() {
 	scrollTop = $(this).scrollTop();
-	var promoHei = $(".promo-wrap").eq(0).outerHeight()
+	var promoHei = $(".promo-wrap").eq(0).outerHeight();
+	var newsTop = $(".shop-wrapper2").offset().top;
+	var newsHei = $(".newsletter").outerHeight();
+	var footerTop = $(".subscribe-wrapper").offset().top;
+
 	if (winWid > 1024) topCont = $slide.outerHeight();
 	else topCont = $slide.outerHeight() + $(".header-wrap").outerHeight();
 	backToTop(scrollTop, topCont);
@@ -80,7 +86,12 @@ function onScroll() {
 	if (scrollTop > topCont + naviTop + promoHei) {
 		$(".svg-wrap svg").css("opacity",1);
 		svgAni()};
-}
+	
+	if(scrollTop > newsHei + newsTop) newsAni();
+
+	if(scrollTop > footerTop - 200 ) $backToTop.css("color","#fff");
+	else $backToTop.css("color","#000");
+	}
 
 function onResize() {
 	winWid = $(this).outerWidth();
@@ -91,7 +102,8 @@ function onResize() {
 			width: "599px",
 			height: "341px"
 		});
-		$(".shop-item").removeClass("x33 x50 x100").addClass("x25");
+		$(".shop-wrapper1 .shop-item").removeClass("x33 x50 x100").addClass("x25");
+		$(".shop-wrapper2 .shop-item").removeClass("x25 x50 x100").addClass("x33-2");
 		$(".svg-wrap").removeClass("x50 x100").addClass("x25");
 	} else if (winWid < 1025 && winWid > 767) {
 		$(".promo-wrap").removeClass("x33 x100").addClass("x50");
@@ -99,14 +111,16 @@ function onResize() {
 			width: "300px",
 			height: "171px"
 		});
-		$(".shop-item").removeClass("x25 x50 x100").addClass("x33");
+		$(".shop-wrapper1 .shop-item").removeClass("x25 x50 x100").addClass("x33");
 		$(".svg-wrap").removeClass("x25 x100").addClass("x50");
 	} else if (winWid < 768 && winWid > 696) {
 		$(".promo-wrap").removeClass("x50 x33").addClass("x100");
-		$(".shop-item").removeClass("x33 x25 x100").addClass("x50");
+		$(".shop-wrapper1 .shop-item").removeClass("x33 x25 x100").addClass("x50");
+		$(".shop-wrapper2 .shop-item").removeClass("x33-2 x100").addClass("x50");
 		$(".svg-wrap").removeClass("x25 x50").addClass("x100");
 	} else if(winWid < 697){
-		$(".shop-item").removeClass("x33 x25 x50").addClass("x100");
+		$(".shop-wrapper1 .shop-item").removeClass("x33 x25 x50").addClass("x100");
+		$(".shop-wrapper2 .shop-item").removeClass("x33-2 x50").addClass("x100");
 			}}
 
 function svgAni() {
@@ -161,6 +175,18 @@ function triggerTrans() {
 
 function onClickTop() {
 	$(window).scrollTop(0);
+}
+
+function newsAni(){
+	var $news = $(".newsletter").find("p");
+	function cbAni(i){
+		$news.eq(i).css({transform : "translateY(0)", "transition-delay" :  i*0.1+"s"});
+	}
+
+	$news.each(function(i){
+		cbAni(i);
+	});
+	
 }
 
 
