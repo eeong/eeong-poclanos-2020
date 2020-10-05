@@ -54,10 +54,10 @@
 									<li>Tour Page</li>
 								</ul>
 							</li>
-							<li>
+							<li class="scroll-bg">
 								<a href="#"><span>Discography</span></a>
-								<div class="sub-nav-wrap">
-									<ul class="sub-nav">
+								<div class="sub-nav">
+									<ul class="">
 										<span>Standard</span>
 										<li>Two Col. Standard</li>
 										<li>Three Col. Standard</li>
@@ -65,7 +65,7 @@
 										<li>Standard Predefined</li>
 										<li>Album List Masonry</li>
 									</ul>
-									<ul class="sub-nav">
+									<ul class="">
 										<span>Gallery</span>
 										<li>Two Col. Gallery</li>
 										<li>Three Col. Gallery</li>
@@ -74,7 +74,7 @@
 										<li>Three Col. With Buttons</li>
 										<li>Four Col. With Buttons</li>
 									</ul>
-									<ul class="sub-nav">
+									<ul class="">
 										<span>Artist and Album</span>
 										<li>Artist List</li>
 										<li>Artist Slider</li>
@@ -82,7 +82,7 @@
 										<li>Minimal Album Single</li>
 										<li>Compact Album Single</li>
 									</ul>
-									<ul class="sub-nav">
+									<ul class="">
 										<span>Lastest Album</span>
 										<li><img src="../img/dd-image-150x150.png" alt="Lastest Album"></li>
 									</ul>
@@ -104,7 +104,17 @@
 									<li>Blog Left Sidebar</li>
 									<li>Blog No Sidebar</li>
 									<li>Blog Pinterest</li>
-									<li>Post Types</li>
+									<li class="sub-nav-li">Post Types <i class="fa fa-angle-right"></i>
+										<ul class="sub-nav sub-sub-nav">
+											<li>Standard</li>
+											<li>Gallery</li>
+											<li>Quote</li>
+											<li>Link</li>
+											<li>Video</li>
+											<li>Audio</li>
+											<li>No Sidebar</li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 							<li>
@@ -112,8 +122,18 @@
 								<ul class="sub-nav">
 									<li>Product List</li>
 									<li>Single Product</li>
-									<li>Shop Layouts</li>
-									<li>Shop Pages</li>
+									<li class="sub-nav-li">Shop Layouts <i class="fa fa-angle-right"></i>
+										<ul class="sub-nav sub-sub-nav">
+										<li>Shop Three Columns</li>
+										<li>Shop Four Columns</li>
+										<li>Shop Full Width</li>
+									</ul></li>
+									<li class="sub-nav-li">Shop Pages <i class="fa fa-angle-right"></i>
+										<ul class="sub-nav sub-sub-nav">
+										<li>My Account</li>
+										<li>Cart</li>
+										<li>Checkout</li>
+									</ul></li>
 								</ul>
 							</li>
 						</ul><!-- //.nav -->
@@ -121,12 +141,25 @@
 				</div><!-- //.nav-wrapper -->
 				<div class="side-nav-wrap x25">
 					<div class="media-wrap x25">
-						<div class="media x33"><i class="fa fa-bandcamp"></i></div>
-						<div class="media x33"><i class="fa fa-soundcloud"></i></div>
-						<div class="media x33"><i class="fa fa-youtube-play"></i></div>
+						<div class="media x33"> 
+							<svg>
+							<circle cx="50%" cy="50%" r="35%"></circle>
+						</svg>
+						<i class="fa fa-bandcamp"></i></div>
+						<div class="media x33">
+							<svg>
+							<circle cx="50%" cy="50%" r="35%"></circle>
+						</svg>
+							<i class="fa fa-soundcloud"></i></div>
+						<div class="media x33">
+							<svg>
+							<circle cx="50%" cy="50%" r="35%"></circle>
+						</svg>
+							<i class="fa fa-youtube-play"></i></div>
 					</div>
-					<div class="cart-wrap x25"> <a href="#"> Cart(0) </a>
-						<div class="cart-message">No products in the cart.</div>
+					<div class="cart-wrap x25"> 
+						<div class="cart"><a href="#"> Cart(0)  </a><div class="cart-message">No products in the cart.</div></div>
+						
 					</div>
 					<div class="side-nav x16"><a href="#">
 							<span class="square1">
@@ -146,6 +179,7 @@
 							</span>
 							</i></a></div>
 				</div><!-- //.side-nav-wrap -->
+
 			</div><!-- //.header-wrap -->
 		</div><!-- //.header-wrapper -->
 
@@ -233,6 +267,7 @@
 					<div class="btn-more bar-ani">View More <i class="fa fa-angle-right"></i></div>
 				</div>
 			</div>
+			
 			<div class="promo-wrap x33">
 				<div class="bg">-15%</div>
 				<div class="promo-img"><img src="../img/Banner-img-2.png" alt="promo"></div>
@@ -593,6 +628,14 @@
 						github.com/eeong
 					</div>
 				</div>
+				<div class="footer-mid">
+					<ul><li><img src="../img/93584318_1507676212744503_2404902278180427768_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93372657_1384822921905793_6821709350889191519_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93157108_250994299276337_1857875497052763846_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93008642_1144732122535129_636697769679527404_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93007535_389856305230876_3083179899727723188_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/92970597_209054827052621_7711348687023200968_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li></ul>
+				</div>
 				<div class="footer-bot">
 					<div class="copy">CopyRight @ eeong</div>
 					<div class="sns-wrapper">
@@ -637,9 +680,67 @@
 			</div>
 		</section><!-- //.footer-wrapper -->
 
+		<aside class="aside-wrapper">
+			<div class="aside-wrap">
+				<div><a href="#"><h2>NeoBeat</h2></a></div>
+				<div><p>Lorem ipsum dolor sit amet Lorem Ipsum.
+					lorem quis bibendum aucto Lorem ipsum dolor
+					um aucto Lorem ipsum</p></div>
+				<div><span>Instagram</span></div>
+				<div class="aside-insta">
+					<ul><li><img src="../img/93584318_1507676212744503_2404902278180427768_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93372657_1384822921905793_6821709350889191519_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93157108_250994299276337_1857875497052763846_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93008642_1144732122535129_636697769679527404_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/93007535_389856305230876_3083179899727723188_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li>
+					<li><img src="../img/92970597_209054827052621_7711348687023200968_nfull.jpg" alt="sns img"><i class="fa fa-instagram"></i></li></ul>
+				</div>
+				<div><span>Follow Us</span></div>
+				<div class="sns-wrapper">
+					<div class="sns-wrap">
+						<svg>
+							<circle cx="50%" cy="50%" r="30%"></circle>
+						</svg>
+						<i class="fa fa-bandcamp"> </i>
+					</div>
+					<div class="sns-wrap">
+						<svg>
+							<circle cx="50%" cy="50%" r="30%"></circle>
+						</svg>
+						<i class="fa fa-facebook-f"> </i>
+					</div>
+					<div class="sns-wrap">
+						<svg>
+							<circle cx="50%" cy="50%" r="30%"></circle>
+						</svg>
+						<i class="fa fa-instagram"> </i>
+					</div>
+					<div class="sns-wrap">
+						<svg>
+							<circle cx="50%" cy="50%" r="30%"></circle>
+						</svg>
+						<i class="fa fa-twitter"> </i>
+					</div>
+					<div class="sns-wrap">
+						<svg>
+							<circle cx="50%" cy="50%" r="30%"></circle>
+						</svg>
+						<i class="fa fa-youtube-play"> </i>
+					</div>
+					<div class="sns-wrap">
+						<svg>
+							<circle cx="50%" cy="50%" r="30%"></circle>
+						</svg>
+						<i class="fa fa-soundcloud"> </i>
+					</div>
+				</div>
+			</div>
+		</aside><!-- aside side-nav-wrapper -->
+
 		<div class="top-scroll">
 			<h2>Back to top</h2> <i class="fa fa-angle-right"></i>
-		</div>
+		</div><!-- //.top-scroll -->
+
 	</div><!-- //.wrapper -->
 
 	<script src="../js/index.js"></script>

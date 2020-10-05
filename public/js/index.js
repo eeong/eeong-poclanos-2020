@@ -10,10 +10,11 @@ var $svgs = $('.svgAni');
 var $path = $('.svgAni').find("path");
 var $line = $('.svgAni').find("line");
 var $footerSlide = $(".footer-slide-wrap");
+var $nav = $(".nav > li");
 var idx = 2;
 var lastIdx = $(".slide-wrapper").length - 1;
 var mouseDown = false;
-var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni,startX,scrollLeft;
+var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni, startX, scrollLeft;
 
 /*************** Function **************/
 
@@ -64,34 +65,46 @@ function onScroll() {
 	var newsTop = $(".shop-wrapper2").offset().top;
 	var newsHei = $(".newsletter").outerHeight();
 	var footerTop = $(".subscribe-wrapper").offset().top;
+	var wideNav = $(".nav > li").eq(2).after
 
 	if (winWid > 1024) topCont = $slide.outerHeight();
 	else topCont = $slide.outerHeight() + $(".header-wrap").outerHeight();
 	backToTop(scrollTop, topCont);
 	var naviTop = topCont + promoHei;
 
-	if (scrollTop > topCont && scrollTop < naviTop) $(".header-wrapper").addClass("on").stop().css({
-		"top": "-70px",
-		"opacity": 0
-	});
-	else if (scrollTop > naviTop) $(".header-wrapper").addClass("on").stop().css({
-		"top": 0,
-		"opacity": 1
-	});
-	else $(".header-wrapper").removeClass("on").stop().css({
-		"top": 0,
-		"opacity": 1
-	});
+	if (scrollTop > topCont && scrollTop < naviTop) {
+		$(".header-wrapper").addClass("on").stop().css({
+			"top": "-70px",
+			"opacity": 0
+		});
+		$(".sub-nav").css("top", "109px");
+		$nav.eq(2).removeClass("scroll-bg");
+	} else if (scrollTop > naviTop) {
+		$(".header-wrapper").addClass("on").stop().css({
+			"top": 0,
+			"opacity": 1
+		});
+		$(".sub-nav").css("top", "70px");
+		$nav.eq(2).addClass("scroll-bg");
+	} else {
+		$(".header-wrapper").removeClass("on").stop().css({
+			"top": 0,
+			"opacity": 1
+		});
+		$(".sub-nav").css("top", "109px");
+		$nav.eq(2).removeClass("scroll-bg");
+	}
 
 	if (scrollTop > topCont + naviTop + promoHei) {
-		$(".svg-wrap svg").css("opacity",1);
-		svgAni()};
-	
-	if(scrollTop > newsHei + newsTop) newsAni();
+		$(".svg-wrap svg").css("opacity", 1);
+		svgAni()
+	};
 
-	if(scrollTop > footerTop - 200 ) $backToTop.css("color","#fff");
-	else $backToTop.css("color","#000");
-	}
+	if (scrollTop > newsHei + newsTop) newsAni();
+
+	if (scrollTop > footerTop - 200) $backToTop.css("color", "#fff");
+	else $backToTop.css("color", "#000");
+}
 
 function onResize() {
 	winWid = $(this).outerWidth();
@@ -118,13 +131,25 @@ function onResize() {
 		$(".shop-wrapper1 .shop-item").removeClass("x33 x25 x100").addClass("x50");
 		$(".shop-wrapper2 .shop-item").removeClass("x33-2 x100").addClass("x50");
 		$(".svg-wrap").removeClass("x25 x50").addClass("x100");
-	} else if(winWid < 697){
+	} else if (winWid < 697) {
 		$(".shop-wrapper1 .shop-item").removeClass("x33 x25 x50").addClass("x100");
 		$(".shop-wrapper2 .shop-item").removeClass("x33-2 x50").addClass("x100");
-			}}
+	}
+}
+
+
+function onNavEnter() {
+	$(this).find("span").removeClass("off");
+	$(this).closest("li").siblings().find("span").addClass("off");
+}
+
+function onNavLeave() {
+	$nav.eq(0).find("span").addClass("off");
+	$nav.eq(0).siblings().find("span").removeClass("off");
+}
 
 function svgAni() {
-	
+
 	$svgs.each(function () {
 		$path.each(function (i, path) {
 			var total_length = path.getTotalLength();
@@ -177,16 +202,20 @@ function onClickTop() {
 	$(window).scrollTop(0);
 }
 
-function newsAni(){
+function newsAni() {
 	var $news = $(".newsletter").find("p");
-	function cbAni(i){
-		$news.eq(i).css({transform : "translateY(0)", "transition-delay" :  i*0.1+"s"});
+
+	function cbAni(i) {
+		$news.eq(i).css({
+			transform: "translateY(0)",
+			"transition-delay": i * 0.1 + "s"
+		});
 	}
 
-	$news.each(function(i){
+	$news.each(function (i) {
 		cbAni(i);
 	});
-	
+
 }
 
 
@@ -196,6 +225,7 @@ $(".arrow-wrap .slide-arrowL").click(onClickL);
 $(".arrow-wrap .slide-arrowR").click(onClickR);
 $(".slide-arrow").mouseenter(triggerTrans);
 $(".home-wrapper").mouseleave(onLeave).mouseenter(onEnter);
+$nav.mouseenter(onNavEnter).mouseleave(onNavLeave);
 
 $(window).scroll(onScroll).trigger("scroll");
 $(window).resize(onResize).trigger("resize");
