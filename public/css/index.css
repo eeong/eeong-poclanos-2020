@@ -50,7 +50,7 @@ html,body{font-family: 'Poppins' , sans-serif;
 .nav > li:nth-child(3)::after{display: block; content:""; width: 100vw; height: 270px; background-color: #fff; position: absolute; top:105px; left: -38vw; box-shadow: 0 10px 10px rgba(242,192,221,0.2); transition: transform 0.4s;  transition-timing-function: cubic-bezier(0.8 , 0.1 , 0.9, 0.2); transform:scaleY(0); transform-origin: top; opacity:0;  z-index: 5;}
 .nav > li.scroll-bg:nth-child(3)::after{top: 70px;}
 .nav > li:nth-child(3):hover::after{transform:scaleY(1); opacity: 1; transition:all 0.3s; transition-delay: 0.1s; }
-.nav > li div.sub-nav{width: 1000px; left: -300%; display: flex; justify-content: space-between; align-items: start; box-shadow: none;}
+.nav > li div.sub-nav{width: 1200px; left: -200%; display: flex; justify-content: space-between; align-items: start; box-shadow: none;}
 .nav > li ul.sub-nav li.sub-nav-li{position: relative;}
 .nav > li ul.sub-nav li.sub-nav-li:hover .sub-sub-nav{opacity:1;}
 .nav > li ul.sub-nav li.sub-nav-li ul.sub-sub-nav{border-radius: 5px; left: 100%; top: 0 !important; transition:opacity 0.5s; opacity:0;}
@@ -212,7 +212,7 @@ html,body{font-family: 'Poppins' , sans-serif;
 .subscribe-wrapper form .btn-view:hover{box-shadow: 0 10px 15px rgba(75, 13, 155, 0.3);}
 
 
-/************ Slide-wrapper  *************/
+/************ footer-slide-wrapper  *************/
 .footer-slide-wrapper{width: 100%; height: 50vh; background-color: #fce4e9; overflow: hidden; position: relative; display: flex; align-items: center; font-size: 1rem; }
 .footer-slide-wrapper .footer-slide-wrap{position: absolute; width:100%; height: 111px; transform: translateY(50%);}
 .footer-slide-wrapper .footer-slide-wrap .footer-slide{ width: 1000px; margin: 0 auto; display: flex; cursor: grab; background-color: #fce4e9;  }
@@ -245,7 +245,11 @@ html,body{font-family: 'Poppins' , sans-serif;
 
 
 /************ Aside-wrapper  *************/
-.aside-wrapper{position: fixed; width: 512px; height: 100vh; background-color: #F8E7E5; top: 0; z-index: 100; font-size: 1rem; right: -100%; transition: all 0.8s; transition-timing-function:ease-in-out}
+.aside-wrapper{position: fixed; width: 512px; height: 100vh; background-color: #f8e7e5; top: 0; z-index: 100; font-size: 1rem; right: -100%; transition: all 0.8s; transition-timing-function:ease-in-out;}
+.aside-wrapper .aside-deco{width: 100%; height: 100%; position: absolute; left: 0; top: 0; overflow: hidden; content:"";}
+.aside-wrapper .aside-deco .aside-background{ width: 150%; height: 300px; position: absolute; bottom: -120px; left: -15%;	border-radius:40%; transform-origin: center; transform: rotate(15deg); background: linear-gradient(90deg, rgb(248, 231, 229) 30%, rgb(241, 192, 167) 100%) }
+.aside-wrapper .aside-deco .aside-background2{ width: 125%; height:140px; position: absolute; bottom: 80px; left: -15%;	border-radius:45%; transform-origin: center; transform: rotate(195deg); background: #f8e7e5; }
+.aside-wrapper .aside-outground{width: calc(100vw - 512px); height: 100vh; position: absolute; z-index: 1; right: 512px; top: 0; opacity:0; }
 .aside-wrapper.on{right: 0;}
 .aside-wrapper .aside-wrap{width: 100%; height: 100%;  padding: 90px 70px 35px 70px; right: 0; 	background-color: #F8E7E5; margin: 0 auto;}
 
