@@ -238,30 +238,36 @@ function newsAni() {
  
 
 function onSlideImg(){
-	$(this).find(".img").eq(0).toggleClass("on")
-	$(this).find(".img").eq(1).toggleClass("on");
+	$(this).find("img").eq(0).toggleClass("on")
+	$(this).find("img").eq(1).toggleClass("on");
 }
 
 var startX;
 var scrollX;
 
 function footerSlideInit(){
+	var imgFile ='';
+	var imgFileH ='';
+	var imgFiles=[];
 	for(var i = 1; i < 9; i++){
-		var imgFile = "'../img/Client-light-img-'+i+'.png'";
-		var imgFileH = "'../img/Client-light-img-'+i+'-H.png'";
-		var imgFiles = '<div class="slide-img><img src='+imgFile+'><img src='+imgFileH+'></div>'
-		$footerSlide.push(imgFiles);
+		 imgFile = "'../img/Client-light-img-"+i+".png'";
+		 imgFileH = "'../img/Client-light-img-"+i+"-H.png'";
+		 imgFiles += '<div class="slide-img"><img src='+imgFile+' class="on"><img src='+imgFileH+'></div>'
+		 $(imgFiles).clone().appendTo($footerSlide);
+		 $(imgFiles).clone().prependTo($footerSlide);
 	}
-	console.log($footerSlide);
+	
 }
 
-footerSlideInit();
+
 
 function footerSlide(){
-	 
-	$(this).mousedown(function(){
+
+	
+
+	$(this).mousedown(function(e){
 		mouseDown = true;
-		startX = $(this).offsetLeft;
+		startX = e.pageX;
 	});
 
 	$(this).mouseup(function(){
@@ -274,14 +280,18 @@ function footerSlideOff(){
 }
 
 function onFooterMove(e){
-	scrollX = -(startX-e.pageX);
-	console.log()
 	if (mouseDown == true) {
-		$(".footer-slide-wrap").css({"transform":  "translate("+ scrollX+ "px , 50% )" });
+		var currentX = $footerSlideWrap.position().left;
+		var RestAni=''
+		scrollX = currentX - (startX - e.pageX)/20;
+		if(scrollX >= 0) RestAni= 45;
+		else RestAni = -45; 
+		$footerSlideWrap.css({"left": scrollX + "px" }).stop().animate({"left":scrollX+RestAni+"px"});
 	}	
 }
 
 /*************** Execute **************/
+footerSlideInit();
 init();
 $(".arrow-wrap .slide-arrowL").click(onClickL);
 $(".arrow-wrap .slide-arrowR").click(onClickR);
@@ -290,7 +300,7 @@ $(".home-wrapper").mouseleave(onLeave).mouseenter(onEnter);
 $nav.mouseenter(onNavEnter).mouseleave(onNavLeave);
 
 $(".aside-nav").click(onAsideNav);
-$(".slide-img").hover(onSlideImg);
+$(".footer-slide-wrapper .slide-img").hover(onSlideImg);
 $(".footer-slide-wrap").hover(footerSlide,footerSlideOff);
 $(".footer-slide-wrap").mousemove(onFooterMove);
 
