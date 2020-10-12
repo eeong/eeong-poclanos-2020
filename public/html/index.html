@@ -161,7 +161,7 @@
 						<div class="cart"><a href="#"> Cart(0)  </a><div class="cart-message">No products in the cart.</div></div>
 						
 					</div>
-					<div class="side-nav side-nav-btn x16">
+					<div class="side-nav side-nav-btn x16" id="webBtnSide">
 							<span class="square1">
 								<div></div>
 								<div></div>
@@ -178,6 +178,23 @@
 								<div></div>
 							</span>
 							</div>
+							<div class="side-nav side-nav-btn x16" id="mobileBtnSide">
+									<span class="square1">
+										<div></div>
+										<div></div>
+										<div></div>
+									</span>
+									<span class="square2">
+										<div></div>
+										<div></div>
+										<div></div>
+									</span>
+									<span class="square3">
+										<div></div>
+										<div></div>
+										<div></div>
+									</span>
+									</div>
 				</div><!-- //.side-nav-wrap -->
 
 			</div><!-- //.header-wrap -->
@@ -698,8 +715,8 @@
 				<div class="nav-wrap">
 					<ul class="nav">
 						<li>
-							<a href="#"><span class="off">Home</span></a>
-							<ul class="sub-nav">
+							<a href="#"><span class="off">Home</span><i class="fa fa-angle-right"></i></a>
+							<ul class="sub-nav ">
 								<li>Main Home</li>
 								<li>Tour Showcase</li>
 								<li>Record Label</li>
@@ -711,9 +728,10 @@
 								<li>Music Festival</li>
 								<li>Landing</li>
 							</ul>
+							
 						</li>
 						<li>
-							<a href="#"><span>Pages</span></a>
+							<a href="#"><span>Pages</span><i class="fa fa-angle-right"></i></a>
 							<ul class="sub-nav">
 								<li>About The Band</li>
 								<li>About Me</li>
@@ -724,41 +742,53 @@
 							</ul>
 						</li>
 						<li class="scroll-bg">
-							<a href="#"><span>Discography</span></a>
+							<a href="#"><span>Discography</span><i class="fa fa-angle-right"></i></a>
 							<div class="sub-nav">
 								<ul class="">
-									<span>Standard</span>
-									<li>Two Col. Standard</li>
-									<li>Three Col. Standard</li>
-									<li>Four Col. Standard</li>
-									<li>Standard Predefined</li>
-									<li>Album List Masonry</li>
+									<li class="sub-nav-li">
+										<a><span>Standard</span><i class="fa fa-angle-right"></i></a>
+										<ul class="sub-nav sub-sub-nav">
+											<li>Two Col. Standard</li>
+											<li>Three Col. Standard</li>
+											<li>Four Col. Standard</li>
+											<li>Standard Predefined</li>
+											<li>Album List Masonry</li>
+										</ul>
+									</li>
 								</ul>
 								<ul class="">
-									<span>Gallery</span>
-									<li>Two Col. Gallery</li>
-									<li>Three Col. Gallery</li>
-									<li>Four Col. Gallery</li>
-									<li>Two Col. With Buttons</li>
-									<li>Three Col. With Buttons</li>
-									<li>Four Col. With Buttons</li>
+									<li class="sub-nav-li">
+										<a><span>Gallery</span><i class="fa fa-angle-right"></i></a>
+										<ul class="sub-sub-nav sub-nav">
+											<li>Two Col. Gallery</li>
+											<li>Three Col. Gallery</li>
+											<li>Four Col. Gallery</li>
+											<li>Two Col. With Buttons</li>
+											<li>Three Col. With Buttons</li>
+											<li>Four Col. With Buttons</li>
+										</ul>
+									</li>
 								</ul>
 								<ul class="">
-									<span>Artist and Album</span>
-									<li>Artist List</li>
-									<li>Artist Slider</li>
-									<li>Artist Single</li>
-									<li>Minimal Album Single</li>
-									<li>Compact Album Single</li>
+									<li class="sub-nav-li">
+										<ul class="sub-nav sub-sub-nav">
+											<a><span>Artist and Album</span><i class="fa fa-angle-right"></i></a>
+											<li>Artist List</li>
+											<li>Artist Slider</li>
+											<li>Artist Single</li>
+											<li>Minimal Album Single</li>
+											<li>Compact Album Single</li>
+										</ul>
+									</li>
 								</ul>
 								<ul class="">
-									<span>Lastest Album</span>
+									<li><a><span>Lastest Album</span></a></l>
 									<li><img src="../img/dd-image-150x150.png" alt="Lastest Album"></li>
 								</ul>
 							</div><!-- //.sub-nav-wrap -->
 						</li>
 						<li>
-							<a href="#"><span>Event</span></a>
+							<a href="#"><span>Event</span><i class="fa fa-angle-right"></i></a>
 							<ul class="sub-nav">
 								<li>Events List</li>
 								<li>Event Info Table</li>
@@ -767,13 +797,13 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#"><span>Blog</span></a>
+							<a href="#"><span>Blog</span><i class="fa fa-angle-right"></i></a>
 							<ul class="sub-nav">
 								<li>Blog Standard</li>
 								<li>Blog Left Sidebar</li>
 								<li>Blog No Sidebar</li>
 								<li>Blog Pinterest</li>
-								<li class="sub-nav-li">Post Types <i class="fa fa-angle-right"></i>
+								<li class="sub-nav-li"><a>Post Types <i class="fa fa-angle-right"></i></a>
 									<ul class="sub-nav sub-sub-nav">
 										<li>Standard</li>
 										<li>Gallery</li>
@@ -787,17 +817,17 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#"><span>Shop</span></a>
+							<a href="#"><span>Shop</span><i class="fa fa-angle-right"></i></a>
 							<ul class="sub-nav">
 								<li>Product List</li>
 								<li>Single Product</li>
-								<li class="sub-nav-li">Shop Layouts <i class="fa fa-angle-right"></i>
+								<li class="sub-nav-li"><a>Shop Layouts <i class="fa fa-angle-right"></i></a>
 									<ul class="sub-nav sub-sub-nav">
 									<li>Shop Three Columns</li>
 									<li>Shop Four Columns</li>
 									<li>Shop Full Width</li>
 								</ul></li>
-								<li class="sub-nav-li">Shop Pages <i class="fa fa-angle-right"></i>
+								<li class="sub-nav-li"><a>Shop Pages <i class="fa fa-angle-right"></i></a>
 									<ul class="sub-nav sub-sub-nav">
 									<li>My Account</li>
 									<li>Cart</li>
