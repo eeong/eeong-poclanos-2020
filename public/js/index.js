@@ -169,7 +169,7 @@ function onSideNav(){
 }
 
 function onNarrowNav(){
-	$(".narrow-nav-wrapper").toggleClass("on");
+	$(".narrow-nav-wrapper").stop().slideDown(300);
 }
 
 $(".narrow-nav-wrapper .nav li > a").click(onNarrowClick);

@@ -276,9 +276,7 @@ html,body{font-family: 'Poppins' , sans-serif;
 .aside-wrapper .aside-wrap .sns-wrapper .sns-wrap i{position: absolute; display: flex; justify-content: center; align-items: center; left: 0; top: 0; width: 40px; height: 40px; color: #111; font-size: 1.1em;}
 
 /************ Narrow nav wrapper  *************/
-.narrow-nav-wrapper{position: absolute; background: #fff; left: 0; width: 100%; top: -300px; display: block !important; z-index: 5; transition: all 0.3s;}
-
-.narrow-nav-wrapper.on{top: 70px; }
+.narrow-nav-wrapper{position: absolute; background: #fff; left: 0; width: 100%; top: 70px; display: none; z-index: 5; transition: all 0.3s;}
 .narrow-nav-wrapper .nav-wrap{ padding: 1em 7em; }
 .narrow-nav-wrapper .nav-wrap .nav{display: block;}
 .narrow-nav-wrapper .nav-wrap .nav a{display: flex; justify-content: space-between; width: 100%; cursor: pointer;}
