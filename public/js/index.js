@@ -29,11 +29,12 @@ var $narrowNavWrapper = $(".narrow-nav-wrapper");
 var $narrowNavLi = $(".narrow-nav-wrapper .nav li > a");
 var footerSlideArr = [];
 var footerSlideHArr = [];
-var footerSlideImg=[];
+var footerSlideImg = [];
 var idx = 2;
 var lastIdx = $(".slide-wrapper").length - 1;
 var mouseDown = false;
-var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni, startX, scrollLeft;
+var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni,
+	startX, scrollLeft;
 
 /*************** Function **************/
 
@@ -78,7 +79,6 @@ function ani() {
 }
 
 
-
 function backToTop(scrollTop, topCont) {
 	if (scrollTop > topCont) $backToTop.css("opacity", 1);
 	else $backToTop.css("opacity", 0);
@@ -92,7 +92,7 @@ function onScroll() {
 	var newsHei = $(".newsletter").outerHeight();
 	var footerTop = $(".subscribe-wrapper").offset().top;
 	onAsideNav();
-	
+
 
 	if (winWid > 1024) topCont = $slide.outerHeight();
 	else topCont = $slide.outerHeight() + $headerWrap.outerHeight();
@@ -106,14 +106,16 @@ function onScroll() {
 		});
 		$subNav.css("top", "109px");
 		$nav.eq(2).removeClass("scroll-bg");
-	} else if (scrollTop > naviTop) {
+	}
+	else if (scrollTop > naviTop) {
 		$headerWrapper.addClass("on").stop().css({
 			"top": 0,
 			"opacity": 1
 		});
 		$subNav.css("top", "70px");
 		$nav.eq(2).addClass("scroll-bg");
-	} else {
+	}
+	else {
 		$headerWrapper.removeClass("on").stop().css({
 			"top": 0,
 			"opacity": 1
@@ -125,7 +127,7 @@ function onScroll() {
 	if (scrollTop > topCont + naviTop + promoHei) {
 		$svg.css("opacity", 1);
 		svgAni()
-	};
+	}
 
 	if (scrollTop > newsHei + newsTop) newsAni();
 
@@ -150,7 +152,8 @@ function onResize() {
 		$svgWrap.removeClass("x50 x100").addClass("x25");
 		$webBtnSide.click(onSideNav);
 		upNarrowNav();
-	} else if (winWid < 1025 && winWid > 767) {
+	}
+	else if (winWid < 1025 && winWid > 767) {
 		$promoWrap.removeClass("x33 x100").addClass("x50");
 		$bannerImg.css({
 			width: "300px",
@@ -160,12 +163,14 @@ function onResize() {
 		$svgWrap.removeClass("x25 x100").addClass("x50");
 		$mobileBtnSide.click(onNarrowNav);
 		onAsideNav();
-	} else if (winWid < 768 && winWid > 696) {
+	}
+	else if (winWid < 768 && winWid > 696) {
 		$promoWrap.removeClass("x50 x33").addClass("x100");
 		$shopItem1.removeClass("x33 x25 x100").addClass("x50");
 		$shopItem2.removeClass("x33-2 x100").addClass("x50");
 		$svgWrap.removeClass("x25 x50").addClass("x100");
-	} else if (winWid < 697) {
+	}
+	else if (winWid < 697) {
 		$shopItem1.removeClass("x33 x25 x50").addClass("x100");
 		$shopItem2.removeClass("x33-2 x50").addClass("x100");
 	}
@@ -182,16 +187,16 @@ function onNavLeave() {
 	$nav.eq(0).siblings().find("span").removeClass("off");
 }
 
-function onSideNav(){
+function onSideNav() {
 	$(".aside-wrapper").addClass("on");
 	$(".aside-nav").click(onAsideNav);
-	$(".aside-wrapper .aside-outground").click(function(e){
+	$(".aside-wrapper .aside-outground").click(function (e) {
 		e.stopPropagation();
 		onAsideNav();
 	})
 }
 
-function onAsideNav(){
+function onAsideNav() {
 	$(".aside-wrapper").removeClass("on");
 }
 
@@ -257,14 +262,15 @@ function newsAni() {
 			"transition-delay": i * 0.1 + "s"
 		});
 	}
+
 	$news.each(function (i) {
 		cbAni(i);
 	});
 
 }
- 
 
-function onSlideImg(){
+
+function onSlideImg() {
 	$(this).toggleClass("on")
 	$(this).siblings("img").toggleClass("on");
 }
@@ -272,79 +278,81 @@ function onSlideImg(){
 var startX;
 var scrollX;
 
-function footerSlideInit(){
-	var imgFile ='';
-	var imgFileH ='';
-	var imgFiles='';
-	var currentX =($footerSlideWrap.position().left);
-	var currentWid =$footerSlideWrap.width();
-	var xInit = Math.ceil((currentX / currentWid))*currentWid 
-	if(currentX == 0){
-		$footerSlideWrap.css({"left":  "-200%" });
-	} else {
-		scrollX = currentX - xInit;
-		$footerSlideWrap.css({"left": scrollX + "px" });
+function footerSlideInit() {
+	var imgFile = '';
+	var imgFileH = '';
+	var imgFiles = '';
+	var currentX = ($footerSlideWrap.position().left);
+	var currentWid = $footerSlideWrap.width();
+	var xInit = Math.ceil((currentX / currentWid)) * currentWid
+	if (currentX == 0) {
+		$footerSlideWrap.css({ "left": "-200%" });
 	}
-	for(var i = 1; i < 9; i++){
-		 imgFile = "'../img/Client-light-img-"+i+".png'";
-		 imgFileH = "'../img/Client-light-img-"+i+"-H.png'";
-		 imgFiles += '<div class="slide-img"><img src='+imgFile+' class="on"><img src='+imgFileH+'></div>'
-		}
-		$(imgFiles).clone().appendTo($footerSlide.empty());
-		$(imgFiles).clone().appendTo($footerSlide);
-		$(imgFiles).clone().prependTo($footerSlide);
-		$(imgFiles).clone().prependTo($footerSlide);
+	else {
+		scrollX = currentX - xInit;
+		$footerSlideWrap.css({ "left": scrollX + "px" });
+	}
+	for (var i = 1; i < 9; i++) {
+		imgFile = "'../img/Client-light-img-" + i + ".png'";
+		imgFileH = "'../img/Client-light-img-" + i + "-H.png'";
+		imgFiles += '<div class="slide-img"><img src=' + imgFile + ' class="on"><img src=' + imgFileH + '></div>'
+	}
+	$(imgFiles).clone().appendTo($footerSlide.empty());
+	$(imgFiles).clone().appendTo($footerSlide);
+	$(imgFiles).clone().prependTo($footerSlide);
+	$(imgFiles).clone().prependTo($footerSlide);
 
-		
+
 }
 
-function onFooterDown(e){
+function onFooterDown(e) {
 	mouseDown = true;
 	startX = e.clientX;
-	
+
 	$(this).mousemove(onFooterMove);
 }
 
-function onFooterUp(e){
+function onFooterUp(e) {
 	mouseDown = false;
 }
-	
-function onFooterMove(e){
+
+function onFooterMove(e) {
 	var currentX = Math.floor(($footerSlideWrap.position().left));
-	var RestAni=''
-	if(mouseDown == true){
-		scrollX = currentX - (startX - e.clientX)/150;
-		if(scrollX >= 0) RestAni= 45;
-		else RestAni = -45; 
-		$footerSlideWrap.css({"left": scrollX + "px" }).stop().animate({"left":scrollX+RestAni+"px"},footerSlideInit)} 
+	var RestAni = ''
+	if (mouseDown == true) {
+		scrollX = currentX - (startX - e.clientX) / 150;
+		if (scrollX >= 0) RestAni = 45;
+		else RestAni = -45;
+		$footerSlideWrap.css({ "left": scrollX + "px" }).stop().animate({ "left": scrollX + RestAni + "px" }, footerSlideInit)
+	}
 	;
 }
 
-function onFooterLeave(){
+function onFooterLeave() {
 	mouseDown = false;
 }
 
-function onNarrowNav(){
+function onNarrowNav() {
 	$narrowNavWrapper.stop().slideToggle(300);
 }
 
-function offNarrowNav(){
+function offNarrowNav() {
 	$narrowNavWrapper.find(".sub-nav").stop().slideUp(300);
 	$narrowNavWrapper.find(".fa").removeClass("active");
 }
 
-function upNarrowNav(){
+function upNarrowNav() {
 	$narrowNavWrapper.stop().slideUp(0);
 	$narrowNavWrapper.find(".sub-nav").stop().slideUp(300);
 	$narrowNavWrapper.find(".fa").removeClass("active");
 }
 
-function onNarrowClick(){
+function onNarrowClick() {
 	$(this).find(".fa").stop().toggleClass("active");
-	$(this).siblings(".sub-nav").stop().slideToggle(300,'linear');
+	$(this).siblings(".sub-nav").stop().slideToggle(300, 'linear');
 	$(this).parent().siblings().find(".fa").stop().removeClass("active");
 	$(this).parent().siblings().find(".sub-nav").stop().slideUp(300);
-	
+
 }
 
 /*************** Execute **************/
