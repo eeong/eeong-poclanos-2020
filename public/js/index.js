@@ -20,7 +20,7 @@ var $slide = $(".slide-wrapper");
 var $promoWrap = $(".promo-wrap")
 var $promo = $(".promo-wrapper").find(".promo-wrap");
 var $bannerImg = $($promo.find("img"));
-var $footerImg = $(".footer-slide-wrapper .slide-img img");
+var $footerImg = $(".footer-slide-wrapper .slide-img");
 var $footerSlide = $(".footer-slide");
 var $footerSlideWrap = $(".footer-slide-wrap");
 var $webBtnSide = $("#webBtnSide");
@@ -276,32 +276,31 @@ function footerSlideInit(){
 	var imgFile ='';
 	var imgFileH ='';
 	var imgFiles='';
-	var $imgSlide=[];
 	var currentX =($footerSlideWrap.position().left);
-	var currentWid = $footerSlideWrap.width()-90;
-	var xInit = (currentX >= 0) ? Math.floor((currentX / currentWid))*currentWid :  Math.ceil((currentX / currentWid))*currentWid 
-
+	var currentWid =$footerSlideWrap.width();
+	var xInit = Math.ceil((currentX / currentWid))*currentWid 
+	if(currentX == 0){
+		$footerSlideWrap.css({"left":  "-200%" });
+	} else {
+		scrollX = currentX - xInit;
+		$footerSlideWrap.css({"left": scrollX + "px" });
+	}
 	for(var i = 1; i < 9; i++){
 		 imgFile = "'../img/Client-light-img-"+i+".png'";
 		 imgFileH = "'../img/Client-light-img-"+i+"-H.png'";
 		 imgFiles += '<div class="slide-img"><img src='+imgFile+' class="on"><img src='+imgFileH+'></div>'
 		}
-		$imgSlide.push($(imgFiles).clone());
+		$(imgFiles).clone().appendTo($footerSlide.empty());
 		$(imgFiles).clone().appendTo($footerSlide);
 		$(imgFiles).clone().prependTo($footerSlide);
+		$(imgFiles).clone().prependTo($footerSlide);
 
-		if(currentX == 0){
-			$footerSlideWrap.css({"left":  "0" });
-		} else {
-			scrollX = currentX - xInit;
-			$footerSlideWrap.css({"left": scrollX + "px" });
-		}
-		console.log(currentX,currentWid,scrollX)
-parseInt		
+		
 }
 
 function onFooterDown(e){
 	mouseDown = true;
+	startX = e.clientX;
 	
 	$(this).mousemove(onFooterMove);
 }
@@ -311,15 +310,14 @@ function onFooterUp(e){
 }
 	
 function onFooterMove(e){
-	startX = e.pageX;
-	var currentX = $footerSlideWrap.position().left;
+	var currentX = Math.floor(($footerSlideWrap.position().left));
 	var RestAni=''
 	if(mouseDown == true){
-	scrollX = currentX - (startX - e.pageX)/70;
-	if(scrollX >= 0) RestAni= 45;
-	else RestAni = -45; 
-	$footerSlideWrap.css({"left":  scrollX + "px" }).stop().animate({"left":scrollX+RestAni+"px"},footerSlideInit)}
-	
+		scrollX = currentX - (startX - e.clientX)/150;
+		if(scrollX >= 0) RestAni= 45;
+		else RestAni = -45; 
+		$footerSlideWrap.css({"left": scrollX + "px" }).stop().animate({"left":scrollX+RestAni+"px"},footerSlideInit)} 
+	;
 }
 
 function onFooterLeave(){
