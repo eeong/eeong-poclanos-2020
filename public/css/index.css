@@ -41,15 +41,15 @@ html,body{font-family: 'Poppins' , sans-serif;
 .header-wrap .nav > li a{display: flex; justify-content: center; align-items: center; height: 100%; }
 .header-wrap .nav > li span{color:#37214A; font-weight: 600; font-size: 1em;}
 .header-wrap .nav > li span.off{color:#978C9F;}
-.header-wrapper .nav > li .sub-nav{ width: 200px; position: absolute; left: -10%; top: 109px; background-color: #fff; box-shadow: 0 10px 10px rgba(242,192,221,0.2); text-align: left; padding: 15px 30px 30px 20px; transition: transform 0.4s;  transition-timing-function: cubic-bezier(0.8 , 0.1 , 0.9, 0.2); transform:scaleY(0); transform-origin: top; opacity:0;  z-index: 10;}
-.header-wrapper .nav-wrapper .nav > li:hover .sub-nav{transform:scaleY(1); opacity: 1; transition:all 0.3s; transition-delay: 0.1s; }
+.header-wrapper .nav > li .sub-nav{ width: 200px; position: absolute; left: -10%; top: 109px; background-color: #fff; box-shadow: 0 10px 10px rgba(242,192,221,0.2); text-align: left; padding: 15px 30px 30px 20px; transition: all 0.3s;  transition-timing-function: cubic-bezier(0.8 , 0.1 , 0.7, 0.2); transform: perspective(500px)  rotateX(30deg) translate3d(0,-30px,-30px) ; opacity:0; visibility: hidden;  transform-origin: top; }
+.header-wrapper .nav-wrapper .nav > li:hover .sub-nav{transform: perspective(1000px) rotateX(0); opacity: 1; transition:all 0.2s; transition-delay: 0.1s; visibility: visible; z-index: 10;	}
 .header-wrapper .nav > li .sub-nav li{ margin-top: 10px; cursor: pointer; transition:all 0.3s; transform:translateX(0); opacity: 1; }
 .header-wrapper .nav > li .sub-nav > li:hover{ transform:translateX(7px); opacity: 0.7;}
 .header-wrapper .nav > li div.sub-nav ul > li:hover{ transform:translateX(7px); opacity: 0.7;}
 .header-wrapper .nav > li ul.sub-nav > li:hover.sub-nav-li{transform:translateX(0); opacity: 1;}
-.header-wrapper .nav > li:nth-child(3)::after{display: block; content:""; width: 100vw; height: 270px; background-color: #fff; position: absolute; top:105px; left: -38vw; box-shadow: 0 10px 10px rgba(242,192,221,0.2); transition: transform 0.4s;  transition-timing-function: cubic-bezier(0.8 , 0.1 , 0.9, 0.2); transform:scaleY(0); transform-origin: top; opacity:0;  z-index: 5;}
+.header-wrapper .nav > li:nth-child(3)::after{display: block; content:""; width: 100vw; height: 270px; background-color: #fff; position: absolute; top:105px; left: -38vw; box-shadow: 0 10px 10px rgba(242,192,221,0.2); transition: all 0.3s;  transition-timing-function: cubic-bezier(0.8 , 0.1 , 0.7, 0.2);  transform: perspective(500px)  rotateX(30deg) translate3d(0,-30px,-30px) ; transform-origin: top; opacity:0; visibility: hidden;}
 .header-wrapper .nav > li.scroll-bg:nth-child(3)::after{top: 70px;}
-.header-wrapper .nav > li:nth-child(3):hover::after{transform:scaleY(1); opacity: 1; transition:all 0.3s; transition-delay: 0.1s; }
+.header-wrapper .nav > li:nth-child(3):hover::after{transform: perspective(1000px) rotateX(0); opacity: 1; transition:all 0.2s; transition-delay: 0.1s; visibility: visible;}
 .header-wrapper .nav > li div.sub-nav{width: 1200px; left: -200%; display: flex; justify-content: space-between; align-items: start; box-shadow: none;}
 .header-wrapper .nav > li ul.sub-nav > li.sub-nav-li{position: relative;}
 .header-wrapper .nav > li ul.sub-nav > li.sub-nav-li:hover ul.sub-sub-nav{opacity:1; visibility: visible;}

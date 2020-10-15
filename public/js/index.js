@@ -4,9 +4,9 @@ var $svg = $(".svg-wrap svg")
 var $svgs = $(this).find('svg').eq(1);
 var $path = $('svg').find("path");
 var $line = $('svg').find("line");
-var $svgs = $('.svgAni');
-var $path = $('.svgAni').find("path");
-var $line = $('.svgAni').find("line");
+var $svgsAni = $('.svgAni');
+var $pathAni = $('.svgAni').find("path");
+var $lineAni = $('.svgAni').find("line");
 var $backToTop = $(".top-scroll");
 var $nav = $(".nav > li");
 var $slideArrow = $(".slide-arrow");
@@ -33,7 +33,7 @@ var footerSlideImg = [];
 var idx = 2;
 var lastIdx = $(".slide-wrapper").length - 1;
 var mouseDown = false;
-var init, interval, onSlideInterval, scrollTop, winWid, widHei, onClickTop, backToTop, topCont, html, naviTop, svgAni,
+var init, interval, onSlideInterval, scrollTop, winWid, widHei, backToTop, topCont, html, naviTop, svgAni,
 	startX, scrollLeft;
 
 /*************** Function **************/
@@ -201,8 +201,8 @@ function onAsideNav() {
 }
 
 function svgAni() {
-	$svgs.each(function () {
-		$path.each(function (i, path) {
+	$svgsAni.each(function () {
+		$pathAni.each(function (i, path) {
 			var total_length = path.getTotalLength();
 			path.style.strokeDasharray = total_length + " " + total_length;
 			path.style.strokeDashoffset = total_length;
@@ -210,7 +210,7 @@ function svgAni() {
 				"strokeDashoffset": 0
 			}, 1500);
 		});
-		$line.each(function (i, line) {
+		$lineAni.each(function (i, line) {
 			var total_lengthL = line.getTotalLength();
 			line.style.strokeDasharray = total_lengthL + " " + total_lengthL;
 			line.style.strokeDashoffset = total_lengthL;
