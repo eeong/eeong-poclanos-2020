@@ -84,7 +84,7 @@ function backToTop(scrollTop, topCont) {
 	else $backToTop.css("opacity", 0);
 }
 
-/*************** Callback **************/
+
 function onScroll() {
 	scrollTop = $(this).scrollTop();
 	var promoHei = $promoWrap.eq(0).outerHeight();
@@ -135,12 +135,13 @@ function onScroll() {
 	else $backToTop.css("color", "#000");
 }
 
-var $shopItem1 = $(".shop-wrapper1 .shop-item");
-var $shopItem2 = $(".shop-wrapper2 .shop-item");
+
 
 function onResize() {
 	winWid = $(this).outerWidth();
 	winHei = $(this).outerHeight();
+	var $shopItem1 = $(".shop-wrapper1 .shop-item");
+	var $shopItem2 = $(".shop-wrapper2 .shop-item");	
 	if (winWid > 1024) {
 		$promoWrap.removeClass("x50 x100").addClass("x33");
 		$bannerImg.css({
@@ -176,6 +177,7 @@ function onResize() {
 	}
 }
 
+/*************** Callback **************/
 
 function onNavEnter() {
 	$(this).find("span").removeClass("off");
