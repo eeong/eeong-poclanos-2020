@@ -362,6 +362,7 @@ html,body{font-family: 'Poppins' , sans-serif ;
 @media screen and (max-width: 696px) {
 	.home-wrapper{min-height:780px; }
 	.home-wrap .slide-wrapper:nth-child(1) .slide-img:nth-child(2) img{transform:translateY(50%); }
+	.video-wrapper .video-wrap .youtube .play-wrap .circle {display: none;}
 	.slide-wrapper:nth-child(1) .slide-img:nth-child(2) img{ 
 		width: 387px;}
 		.slide-wrapper:nth-child(2) .slide-img:nth-child(2) img{ 

@@ -124,7 +124,7 @@ function onScroll() {
 		$nav.eq(2).removeClass("scroll-bg");
 	}
 
-	if (scrollTop > topCont + naviTop + promoHei) {
+	if (scrollTop > naviTop + promoHei) {
 		$svg.css("opacity", 1);
 		svgAni()
 	}
