@@ -3,27 +3,23 @@
 <br>
 
 ## 사용 스택
-- **퍼블리싱** 
-<br>
-HTML5 , CSS3 , jQuery
+- **퍼블리싱**  
+	HTML5 , CSS3 , jQuery
 <br>
 
-- **디자인** 
-<br>
+- **디자인**  
 Adobe PhotoShop
 <br> 
 
-- **관리** 
-<br>
+- **관리**  
 git
 <br> 
 
-- **배포** 
-<br>
+- **배포**  
 firebase
 <br>
 
-# 
+
 
 ## 기획
 
