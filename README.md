@@ -4,18 +4,22 @@
 
 ## 사용 스택
 - **퍼블리싱** 
+<br>
 HTML5 , CSS3 , jQuery
 <br>
 
 - **디자인** 
+<br>
 Adobe PhotoShop
 <br> 
 
 - **관리** 
+<br>
 git
 <br> 
 
 - **배포** 
+<br>
 firebase
 <br>
 
