@@ -1,5 +1,5 @@
 # 포크라노스: 메인페이지
-## [배포 링크](https://eeong-my.web.app)
+## [배포 링크](https://eeong-my.web.app){: target="_blank"}
 <br>
 
 ## 사용 스택
