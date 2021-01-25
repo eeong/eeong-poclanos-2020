@@ -369,7 +369,7 @@ html,body{font-family: 'Poppins' , sans-serif ;
 			width: 380px;}
 			.slide-wrapper:nth-child(3) .slide-img:nth-child(2) img{ 
 				width: 250px;}
-				.shop-wrapper2 .shop-wrap{width: auto;}
+				.shop-wrapper2 .shop-wrap{width: auto; min-width: 300px;}
 				.newsletter-wrap{font-size: 9px;}
 				.footer-wrapper {height: max-content;}
 				.footer-wrapper .footer-mid{width: auto; height: 100%;}
@@ -380,7 +380,10 @@ html,body{font-family: 'Poppins' , sans-serif ;
 		
 	@media screen and (max-width: 640px) {
 		.promo-wrapper{font-size: 0.7rem; }
-		.newsletter-wrap{font-size: 8px;}
+		.newsletter-wrap{font-size: 8px; width: 90%;}
+		.newsletter-wrap .newsletter p{font-size: 8em; }
+		.newsletter-wrap .btn-view{padding: 6px 24px;}
+		.newsletter-wrap form input{width: 16em;}
 }
 
 @media screen and (max-width: 480px) {
